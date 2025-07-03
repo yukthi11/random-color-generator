@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker</title>
+</head>
+<body id ="body">
+    
+    <button id="colorbtn">Change Color</button>
+
+    <style>
+        body{
+            background-color: #C8AAAA;
+    display:block;
+    text-align: center;
+    margin-top: 300px;
+    transition: background-color 0.5s ease; 
+}
+
+#colorbtn{
+    border-radius: 30px;
+    padding: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid white;
+    
+}
+    </style>
+
+
+<script>
+    const colorChangeBtn = document.getElementById("colorbtn");
+    const bodyContainer = document.getElementById("body");
+
+    diffColors = ["#C8AAAA" , "#E7D4B5", "#FFE9D0", "#BBE9FF", "#B1AFFF", "#ACE1AF" , "#A87676", "#F6F5F2"]
+    function getRandomElement(arr) {
+    let randomIndex = Math.floor(Math.random() * arr.length);  // Get a random index
+    return arr[randomIndex];  // Return the color at that index
+}
+    colorChangeBtn.addEventListener("click", () => {
+        let randomColor = getRandomElement(diffColors);
+        bodyContainer.style.backgroundColor = randomColor;
+      
+    })
+</script>
+
+</body>
+</html>
